@@ -1,12 +1,8 @@
 ﻿using DevExpress.XtraEditors;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
 using System.Data.Entity;
-using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Windows.Forms;
 
 namespace EFDemo
@@ -58,9 +54,9 @@ namespace EFDemo
         /// <param name="e"></param>
         private void cancelButton_ItemClick(object sender, DevExpress.XtraBars.ItemClickEventArgs e)
         {
-           
+
             var changed = db.ChangeTracker.Entries().Where(x => x.State != EntityState.Unchanged).ToList();
-            foreach(var obj in changed)
+            foreach (var obj in changed)
             {
                 switch (obj.State)
                 {
